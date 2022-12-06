@@ -1,0 +1,20 @@
+package com.DButil;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBUtil {
+	public static final String DRIVER_CLASS="com.mysql.jdbc.Driver";
+	public static final String DB_URL="jdbc:mysql://localhost:3306/academy";
+	public static final String USERNAME="root";
+	public static final String PASSWORD="123456";
+		public static Connection dbConn() throws SQLException, ClassNotFoundException {
+			//register the driver
+			Class.forName(DRIVER_CLASS);
+			//connection statement
+			Connection con=DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
+			return con;
+		}
+		
+	}
